@@ -1,20 +1,3 @@
-# axum-guard-router
-A `axum` middleware to create a guard router.
-
-[![Build](https://github.com/yaojianpin/axum-guard-router/actions/workflows/rust.yml/badge.svg)](https://github.com/yaojianpin/acts/actions?workflow=rust)
-[![Test](https://github.com/yaojianpin/axum-guard-router/actions/workflows/test.yml/badge.svg)](https://github.com/yaojianpin/axum-guard-router/actions?workflow=test)
-
-More information about this crate can be found in the [crate documentation][docs].
-
-## High level features
-
-- Custom router resoure and action name.
-- Custom router roles.
-- Creatge guard to check the routing marked with roles, resource or action.
-
-## Usage example
-
-```rust,no_run
 use axum::{
     extract::Path,
     http::StatusCode,
@@ -62,7 +45,7 @@ async fn main() {
             ),
     );
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3100").await.unwrap();
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
 
@@ -97,10 +80,3 @@ async fn update_user(Path(id): Path<u64>, Json(mut user): Json<User>) -> impl In
     user.id = id;
     (StatusCode::OK, Json(user))
 }
-```
-## License
-
-This project is licensed under the [Apache License 2.0][license].
-
-[docs]: https://docs.rs/axum-guard-router
-[license]: https://github.com/yaojianpin/axum-guard-router/blob/main/axum-guard-router/LICENSE
