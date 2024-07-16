@@ -33,7 +33,6 @@ impl TestGuard {
     }
 }
 
-// #[async_trait::async_trait]
 impl OnGuard for TestGuard {
     async fn on_guard(&self, resource: &str, action: &str) -> Result<(), axum::response::Response> {
         log::debug!("on_guard: resource={resource},action={action}");

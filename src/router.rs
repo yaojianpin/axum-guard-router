@@ -10,6 +10,7 @@ pub struct GuardRouter<G, S = ()> {
     guard: Arc<G>,
 }
 
+#[allow(rustdoc::invalid_rust_codeblocks)]
 impl<G, S> GuardRouter<G, S>
 where
     S: Clone + Send + Sync + 'static,
@@ -33,7 +34,6 @@ where
     /// #[derive(Clone)]
     /// struct MyGuard;
     ///
-    /// #[async_trait::async_trait]
     /// impl OnGuard for MyGuard {
     ///     async fn on_guard(&self, resource: &str, action: &str) -> Result<(), Response> {
     ///         println!("on_guard: resource={resource} action={action}");
@@ -77,7 +77,6 @@ where
     /// #[derive(Clone)]
     /// struct MyGuard;
     ///
-    /// #[async_trait::async_trait]
     /// impl OnGuard for MyGuard {
     ///     async fn on_guard(&self, resource: &str, action: &str) -> Result<(), Response> {
     ///         println!("on_guard: resource={resource} action={action}");
@@ -123,7 +122,6 @@ where
     /// #[derive(Clone)]
     /// struct MyGuard;
     ///
-    /// #[async_trait::async_trait]
     /// impl OnGuard for MyGuard {
     ///     async fn on_roles(&self, roles: &[String]) -> Result<(), Response> {
     ///         Ok(())

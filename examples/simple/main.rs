@@ -12,7 +12,6 @@ use std::sync::Arc;
 #[derive(Clone)]
 struct MyGuard;
 
-// #[async_trait::async_trait]
 impl OnGuard for MyGuard {
     async fn on_guard(&self, resource: &str, action: &str) -> Result<(), Response> {
         println!("on_guard: resource={resource} action={action}");
