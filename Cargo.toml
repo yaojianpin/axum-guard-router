@@ -1,8 +1,10 @@
 [package]
 name = "axum-guard-router"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 resolver = "2"
+homepage = "https://docs.rs/axum-guard-router"
+repository = "https://github.com/yaojianpin/axum-guard-router.git"
 
 [dependencies]
 axum = "0.7.5"
