@@ -1,8 +1,5 @@
 use crate::OnGuard;
-use axum::{
-    extract::Request,
-    response::Response,
-};
+use axum::{extract::Request, response::Response};
 use futures::future::BoxFuture;
 use std::{
     sync::Arc,

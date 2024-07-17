@@ -22,7 +22,7 @@ use axum::{
     routing::{get, post, put},
     Json, Router,
 };
-use axum_guard_router::{GuardRouter, OnGuard};
+use axum_guard_router::{action, GuardRouter, OnGuard};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 
@@ -51,8 +51,15 @@ async fn main() {
     let app = Router::new().nest(
         "/user",
         GuardRouter::new("admin:user", guid.clone())
-            .action("my:create", "/", post(create_user))
+            // one path for multipe actions
+            .route(
+                "/admin/:id",
+                action::get("my:get", get_user).put("my:update", update_user),
+            )
+            // one path for only one action with multipe axum::routing
+            .action("my:write", "/", get(get_user).post(create_user))
             .build()
+            // nest router
             .nest(
                 "/nest",
                 GuardRouter::new("admin:user", guid.clone())

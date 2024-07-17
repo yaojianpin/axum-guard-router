@@ -10,5 +10,6 @@ mod service;
 #[cfg(test)]
 mod test_helper;
 
+pub mod action;
 pub use guard::OnGuard;
 pub use router::GuardRouter;

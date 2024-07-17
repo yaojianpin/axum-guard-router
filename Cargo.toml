@@ -1,10 +1,10 @@
 [package]
 name = "axum-guard-router"
-version = "0.1.3"
+version = "0.2.0"
 edition = "2021"
 resolver = "2"
 license = "Apache-2.0"
-description = "a axum middleware to create a guard router"
+description = "an axum middleware to create a guard router"
 homepage = "https://docs.rs/axum-guard-router"
 repository = "https://github.com/yaojianpin/axum-guard-router.git"
 
