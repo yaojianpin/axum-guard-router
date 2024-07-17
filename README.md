@@ -1,5 +1,5 @@
 # axum-guard-router
-A `axum` middleware to create a guard router.
+An `axum` middleware to create a guard router.
 
 [![Build](https://github.com/yaojianpin/axum-guard-router/actions/workflows/rust.yml/badge.svg)](https://github.com/yaojianpin/acts/actions?workflow=rust)
 [![Test](https://github.com/yaojianpin/axum-guard-router/actions/workflows/test.yml/badge.svg)](https://github.com/yaojianpin/axum-guard-router/actions?workflow=test)
